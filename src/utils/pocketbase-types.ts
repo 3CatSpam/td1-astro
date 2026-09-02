@@ -11,7 +11,6 @@ export const Collections = {
 	Mfas: "_mfas",
 	Otps: "_otps",
 	Superusers: "_superusers",
-	Maison: "maison",
 	Users: "users",
 } as const
 export type Collections = typeof Collections[keyof typeof Collections]
@@ -94,20 +93,6 @@ export type SuperusersRecord = {
 	verified?: boolean
 }
 
-export type MaisonRecord = {
-	addresse?: string
-	created: IsoAutoDateString
-	favori?: boolean
-	id: string
-	image?: FileNameString
-	nbChambres?: number
-	nbSDB?: number
-	nomMaison?: string
-	prix?: number
-	surface?: number
-	updated: IsoAutoDateString
-}
-
 export type UsersRecord = {
 	avatar?: FileNameString
 	created: IsoAutoDateString
@@ -127,7 +112,6 @@ export type ExternalauthsResponse<Texpand = unknown> = Required<ExternalauthsRec
 export type MfasResponse<Texpand = unknown> = Required<MfasRecord> & BaseSystemFields<Texpand>
 export type OtpsResponse<Texpand = unknown> = Required<OtpsRecord> & BaseSystemFields<Texpand>
 export type SuperusersResponse<Texpand = unknown> = Required<SuperusersRecord> & AuthSystemFields<Texpand>
-export type MaisonResponse<Texpand = unknown> = Required<MaisonRecord> & BaseSystemFields<Texpand>
 export type UsersResponse<Texpand = unknown> = Required<UsersRecord> & AuthSystemFields<Texpand>
 
 // Types containing all Records and Responses, useful for creating typing helper functions
@@ -138,7 +122,6 @@ export type CollectionRecords = {
 	_mfas: MfasRecord
 	_otps: OtpsRecord
 	_superusers: SuperusersRecord
-	maison: MaisonRecord
 	users: UsersRecord
 }
 
@@ -148,7 +131,6 @@ export type CollectionResponses = {
 	_mfas: MfasResponse
 	_otps: OtpsResponse
 	_superusers: SuperusersResponse
-	maison: MaisonResponse
 	users: UsersResponse
 }
 
