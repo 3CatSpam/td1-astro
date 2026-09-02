@@ -1,11 +1,8 @@
 ---
 import { Collections } from '../utils/pocketbase-types';
-
+import app from '../components/App.jsx';
 import Layout from '../layouts/Layout.astro';
 import pb  from '../utils/pb';
 
-let listMaisons = await pb.collection(Collections.Maison).getFullList({
-	sort: '-created',
-});
-console.log(listMaisons);
+
 ---

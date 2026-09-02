@@ -8,14 +8,14 @@ export default function App() {
       <h1>Penguins</h1>
       <PlotFigure
         options={{
-            title: "For charts, an informative title",
-            subtitle: "Subtitle to follow with additional context",
-            caption: "Figure 1. A chart with a title, subtitle, and caption.",
+            title: "Penguins",
+            subtitle: "par espèce, et masse",
+            caption: "Graph 1.",
 
-             ariaLabel: "label sur le svg lui même",
+             ariaLabel: "Penguins",
 
           marks: [
-            Plot.dot(penguins, {x: "culmen_length_mm", y: "culmen_depth_mm"})
+            Plot.dot(penguins, {x: "Species", y: "Body Mass (g)"})
           ]
         }}
       />
