@@ -9,7 +9,7 @@ const options = {
   color: { legend: true },
   marks: [
     Plot.frame(),
-    Plot.barY(penguinsData, {x: 'species', y: 'body_mass_g'}),
+    Plot.dot(penguinsData, {x: 'species', y: 'body_mass_g', stroke : 'species'}),
   ],
 };
 ---
