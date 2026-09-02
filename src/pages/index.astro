@@ -1,8 +1,29 @@
 ---
-import { Collections } from '../utils/pocketbase-types';
-import app from '../components/App.jsx';
-import Layout from '../layouts/Layout.astro';
-import pb  from '../utils/pb';
+import PlotFigure from '../components/PlotFigure.js';
+import * as Plot from '@observablehq/plot';
+import penguinsData from '../data/penguins.json';
 
-
+const options = {
+  grid: true,
+  inset: 10,
+  color: { legend: true },
+  marks: [
+    Plot.frame(),
+    Plot.dot(penguinsData, {x: 'species', y: 'body_mass_g'}),
+  ],
+};
 ---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Penguins</title>
+  </head>
+  <body>
+    <main>
+      <h1>Penguins</h1>
+      <PlotFigure options={options} />
+    </main>
+  </body>
+</html>

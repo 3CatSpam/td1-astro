@@ -15,7 +15,7 @@ export default function App() {
              ariaLabel: "Penguins",
 
           marks: [
-            Plot.dot(penguins, {x: "species", y: "body_mass_g"})
+            Plot.dot(penguins, {x: "species", y: "body_mass_g"}).bar()
           ]
         }}
       />
